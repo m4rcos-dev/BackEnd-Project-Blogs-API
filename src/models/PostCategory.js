@@ -29,3 +29,5 @@ const PostCategory = sequelize.define('PostCategory',{
   }
   return PostCategory;
 };
+
+// Requisitos 1, 2, 7, 10, 11
