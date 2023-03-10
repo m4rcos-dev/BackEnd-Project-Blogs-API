@@ -8,7 +8,7 @@ const createUser = async (req, res) => {
 };
 
 const getAllUsers = async (_req, res) => {
-  const allUsers = userService.getAllUsers();
+  const allUsers = await userService.getAllUsers();
   return res.status(200).json(allUsers);
 };
 
