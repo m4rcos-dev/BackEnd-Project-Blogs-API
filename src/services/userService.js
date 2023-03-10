@@ -2,10 +2,13 @@ const { User } = require('../models');
 const { generateToken } = require('../auth/authFunctions');
 
 const createUser = async (user) => {
+  const { email } = user;
+  const verifyDuplicity = await User.findOne({ where: { email } });
+  if (verifyDuplicity) return { status: 409, message: 'User already registered' };
   await User.create(user);
   const { password: _, ...userWhithoutPass } = user;
   const token = generateToken(userWhithoutPass);
-  return token;
+  return { status: 201, token };
 };
 
 module.exports = { createUser };
