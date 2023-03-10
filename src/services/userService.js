@@ -11,4 +11,9 @@ const createUser = async (user) => {
   return { status: 201, token };
 };
 
-module.exports = { createUser };
+const getAllUsers = async () => {
+ const allUsers = await User.findAll();
+ return allUsers;
+};
+
+module.exports = { createUser, getAllUsers };
