@@ -16,4 +16,10 @@ const getAllUsers = async () => {
   return allUsers;
 };
 
-module.exports = { createUser, getAllUsers };
+const getById = async (id) => {
+  const user = await User.findOne({ where: { id } });
+  if (!user) return { status: 404, message: 'User does not exist' };
+  return { status: 200, user };
+};
+
+module.exports = { createUser, getAllUsers, getById };
