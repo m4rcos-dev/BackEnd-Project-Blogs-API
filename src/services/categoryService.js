@@ -14,4 +14,4 @@ const getAllCategories = async () => {
 
 module.exports = { createCategory, getAllCategories };
 
-// Requirement 08
+// Requirements 08, 09.
