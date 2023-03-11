@@ -20,3 +20,5 @@ const createPost = async (post) => {
 };
 
 module.exports = { createPost };
+
+// Requirement 12
