@@ -7,6 +7,11 @@ const createCategory = async (category) => {
   return { status: 201, categoryCreated };
 };
 
-module.exports = { createCategory };
+const getAllCategories = async () => {
+  const allCategories = Category.findAll();
+  return allCategories;
+};
+
+module.exports = { createCategory, getAllCategories };
 
 // Requirement 08
