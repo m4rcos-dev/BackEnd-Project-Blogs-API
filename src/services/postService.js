@@ -1,8 +1,8 @@
 const { BlogPost } = require('../models');
 
-const createPost = async (body) => {
-  const { title, content } = body;
-  const { id } = body.currentUser;
+const createPost = async (post) => {
+  const { title, content } = post;
+  const { id } = post.currentUser;
   const currentPost = {
     title,
     content,
