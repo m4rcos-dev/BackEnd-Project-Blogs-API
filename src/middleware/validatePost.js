@@ -9,7 +9,8 @@ const validatePost = async (req, res, next) => {
     const currentCategory = await Category.findOne({ where: { id: category } });
     return !currentCategory;
   });
-  const verifyAllCategories = verifyCategory.every((valid) => !valid);
+  const arrVefifyCategory = await Promise.all(verifyCategory);
+  const verifyAllCategories = arrVefifyCategory.every((valid) => !valid);
   if (!verifyAllCategories) {
     return res.status(400).json({ message: 'one or more "categoryIds" not found' });
   }
