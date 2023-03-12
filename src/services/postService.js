@@ -1,4 +1,4 @@
-const { BlogPost, PostCategory, sequelize } = require('../models');
+const { BlogPost, PostCategory, User, sequelize } = require('../models');
 
 const createPost = async (post) => {
   const { title, content, categoryIds } = post;
@@ -19,6 +19,11 @@ const createPost = async (post) => {
   return result;
 };
 
-module.exports = { createPost };
+const getAllPosts = async () => {
+  const allPosts = await BlogPost.findAll({ include: { model: User, as: 'user' } });
+  return allPosts;
+};
+
+module.exports = { createPost, getAllPosts };
 
 // Requirement 12
