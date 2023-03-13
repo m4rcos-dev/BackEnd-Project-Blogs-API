@@ -42,4 +42,4 @@ const getPostById = async (id) => {
 
 module.exports = { createPost, getAllPosts, getPostById };
 
-// Requirements 12, 13
+// Requirements 12, 13, 14
