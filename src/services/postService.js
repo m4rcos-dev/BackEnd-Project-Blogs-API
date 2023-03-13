@@ -40,6 +40,12 @@ const getPostById = async (id) => {
   return { status: 200, currentPost };
 };
 
-module.exports = { createPost, getAllPosts, getPostById };
+const updatePost = async (id, { title, content }) => {
+  const currentPost = getPostById(id);
+  const updatedPost = { ...currentPost, title, content };
+  return updatedPost;
+};
+
+module.exports = { createPost, getAllPosts, getPostById, updatePost };
 
 // Requirements 12, 13, 14
