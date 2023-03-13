@@ -1,9 +1,3 @@
-/**
- *
- * @param {import('sequelize')} sequelize
- * @param {import('sequelize')} DataTypes
- */
-
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     id: {
