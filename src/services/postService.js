@@ -31,4 +31,4 @@ const getAllPosts = async () => {
 
 module.exports = { createPost, getAllPosts };
 
-// Requirement 12
+// Requirements 12, 13
