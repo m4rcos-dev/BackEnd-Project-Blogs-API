@@ -29,6 +29,16 @@ const getAllPosts = async () => {
   return allPosts;
 };
 
-module.exports = { createPost, getAllPosts };
+const getPostById = async (id) => {
+  const currentPost = await BlogPost.finPk(id, {
+    include: [
+      { model: User, as: 'user', attributes: { exclude: ['password'] } },
+      { model: Category, as: 'categories', through: { attributes: [] } },
+    ],
+  });
+  return currentPost;
+};
+
+module.exports = { createPost, getAllPosts, getPostById };
 
 // Requirements 12, 13
