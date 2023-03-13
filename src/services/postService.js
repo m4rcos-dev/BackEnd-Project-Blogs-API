@@ -41,9 +41,14 @@ const getPostById = async (id) => {
 };
 
 const updatePost = async (id, { title, content }) => {
-  const currentPost = await getPostById(id);
-  const updatedPost = { title, content, ...currentPost };
-  return updatedPost;
+  const updatingPost = await BlogPost.update({ title, content }, { where: { id } });
+  if (!updatingPost[0]) {
+    return { status: 400, message: 'Internal error when trying to update post' };
+  }
+
+  const currentUpdatedPost = await getPostById(id);
+  const updatedPost = currentUpdatedPost.currentPost;
+  return { status: 200, updatedPost };
 };
 
 module.exports = { createPost, getAllPosts, getPostById, updatePost };
