@@ -41,8 +41,8 @@ const getPostById = async (id) => {
 };
 
 const updatePost = async (id, { title, content }) => {
-  const currentPost = getPostById(id);
-  const updatedPost = { ...currentPost, title, content };
+  const currentPost = await getPostById(id);
+  const updatedPost = { title, content, ...currentPost };
   return updatedPost;
 };
 
