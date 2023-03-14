@@ -376,6 +376,9 @@
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Post does not exist"
           }
         }
       },
@@ -428,6 +431,9 @@
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Post does not exist"
           }
         }
       },
@@ -450,14 +456,14 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Deleted - without response body"
-          },
           "204": {
-            "description": "No Content"
+            "description": "Deleted - without response body"
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Post does not exist"
           }
         }
       }

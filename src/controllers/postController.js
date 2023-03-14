@@ -11,6 +11,10 @@ const getPostById = async (req, res) => {
   /* #swagger.responses[200] = {
             description: 'Ok',
     } */
+
+  /* #swagger.responses[404] = {
+          description: 'Post does not exist',
+  } */
   const { id } = req.params;
   const { status, message, currentPost } = await postService.getPostById(id);
   if (message) return res.status(status).json({ message });
@@ -66,6 +70,10 @@ const updatePost = async (req, res) => {
   /* #swagger.responses[400] = {
         description: `Some required fields are missing`,
 } */
+
+  /* #swagger.responses[404] = {
+          description: 'Post does not exist',
+  } */
   const { id } = req.params;
   const { body } = req;
   const { status, message, updatedPost } = await postService.updatePost(id, body);
@@ -75,9 +83,13 @@ const updatePost = async (req, res) => {
 
 const removePost = async (req, res) => {
   // #swagger.tags = ['Post']
-  /* #swagger.responses[200] = {
+  /* #swagger.responses[204] = {
       description: `Deleted - without response body`,
 } */
+
+  /* #swagger.responses[404] = {
+          description: 'Post does not exist',
+  } */
   const { id } = req.params;
   const removedPost = await postService.removePost(id);
   return res.status(204).json(removedPost);
