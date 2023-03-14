@@ -28,3 +28,5 @@ const removeCurrentUser = async (id) => {
 };
 
 module.exports = { createUser, getAllUsers, getById, removeCurrentUser };
+
+// Requeriment 17
