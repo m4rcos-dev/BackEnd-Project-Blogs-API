@@ -22,4 +22,9 @@ const getById = async (id) => {
   return { status: 200, user };
 };
 
-module.exports = { createUser, getAllUsers, getById };
+const removeCurrentUser = async (id) => {
+  await User.destroy({ where: { id } });
+  return null;
+};
+
+module.exports = { createUser, getAllUsers, getById, removeCurrentUser };
