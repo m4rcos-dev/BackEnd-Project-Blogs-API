@@ -1,4 +1,8 @@
-const swaggerAutogen = require('swagger-autogen')();
+const options = {
+  autoBody: false,
+};
+
+const swaggerAutogen = require('swagger-autogen')(options);
 
 const doc = {
   info: {

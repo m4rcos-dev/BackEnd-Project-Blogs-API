@@ -178,18 +178,6 @@
             "name": "authorization",
             "in": "header",
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "currentUser": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -204,6 +192,9 @@
     },
     "/categories/": {
       "get": {
+        "tags": [
+          "Category"
+        ],
         "description": "",
         "parameters": [
           {
@@ -222,24 +213,15 @@
         }
       },
       "post": {
+        "tags": [
+          "Category"
+        ],
         "description": "",
         "parameters": [
           {
             "name": "authorization",
             "in": "header",
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "currentUser": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -251,6 +233,9 @@
     },
     "/post/search": {
       "get": {
+        "tags": [
+          "Post"
+        ],
         "description": "",
         "parameters": [
           {
@@ -276,6 +261,9 @@
     },
     "/post/": {
       "get": {
+        "tags": [
+          "Post"
+        ],
         "description": "",
         "parameters": [
           {
@@ -294,33 +282,15 @@
         }
       },
       "post": {
+        "tags": [
+          "Post"
+        ],
         "description": "",
         "parameters": [
           {
             "name": "authorization",
             "in": "header",
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "currentUser": {
-                  "example": "any"
-                },
-                "title": {
-                  "example": "any"
-                },
-                "content": {
-                  "example": "any"
-                },
-                "categoryIds": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -338,6 +308,9 @@
     },
     "/post/{id}": {
       "get": {
+        "tags": [
+          "Post"
+        ],
         "description": "",
         "parameters": [
           {
@@ -359,6 +332,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Post"
+        ],
         "description": "",
         "parameters": [
           {
@@ -371,18 +347,6 @@
             "name": "authorization",
             "in": "header",
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "currentUser": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -392,6 +356,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Post"
+        ],
         "description": "",
         "parameters": [
           {
@@ -404,18 +371,6 @@
             "name": "authorization",
             "in": "header",
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "currentUser": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
