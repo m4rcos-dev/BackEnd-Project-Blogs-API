@@ -55,6 +55,11 @@ const updatePost = async (id, { title, content }) => {
   return { status: 200, updatedPost };
 };
 
-module.exports = { createPost, getAllPosts, getPostById, updatePost };
+const removePost = async (id) => {
+  await BlogPost.destroy({ where: { id } });
+  return null;
+};
+
+module.exports = { createPost, getAllPosts, getPostById, updatePost, removePost };
 
 // Requirements 12, 13, 14, 15
