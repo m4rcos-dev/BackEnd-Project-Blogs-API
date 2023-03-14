@@ -32,4 +32,10 @@ const removePost = async (req, res) => {
   return res.status(204).json(removedPost);
 };
 
-module.exports = { createPost, getAllPosts, getPostById, updatePost, removePost };
+const getByTerm = async (req, res) => {
+ const { q } = req.query;
+ const likePost = await postService.getByTerm(q);
+ return res.status(200).json(likePost);
+};
+
+module.exports = { createPost, getAllPosts, getPostById, updatePost, removePost, getByTerm };
