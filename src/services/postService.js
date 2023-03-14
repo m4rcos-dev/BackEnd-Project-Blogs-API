@@ -1,4 +1,5 @@
-const { BlogPost, PostCategory, User, Category, sequelize, Sequelize } = require('../models');
+const { Op } = require('sequelize');
+const { BlogPost, PostCategory, User, Category, sequelize } = require('../models');
 
 const createPost = async (post) => {
   const { title, content, categoryIds } = post;
@@ -63,11 +64,15 @@ const removePost = async (id) => {
 const getByTerm = async (term) => {
   const likePost = await BlogPost.findAll({
     where: {
-      [Sequelize.Op.or]: [
-        { title: { [Sequelize.Op.like]: term } },
-        { content: { [Sequelize.Op.like]: term } },
+      [Op.or]: [
+        { title: { [Op.like]: `%${term}%` } },
+        { content: { [Op.like]: `%${term}%` } },
       ],
     },
+    include: [
+      { model: User, as: 'user', attributes: { exclude: ['password'] } },
+      { model: Category, as: 'categories', through: { attributes: [] } },
+    ],
   });
   return likePost;
 };
