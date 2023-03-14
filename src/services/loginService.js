@@ -12,5 +12,3 @@ const login = async (email, password) => {
 };
 
 module.exports = { login };
-
-// Requeriment 03
