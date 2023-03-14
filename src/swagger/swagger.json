@@ -314,6 +314,39 @@
             "name": "authorization",
             "in": "header",
             "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "You need to enter a valid post",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Latest updates, August 1st"
+                },
+                "content": {
+                  "type": "string",
+                  "example": "The whole text for the blog post goes here in this key"
+                },
+                "categoryIds": {
+                  "type": "array",
+                  "example": [
+                    1,
+                    2
+                  ],
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "content",
+                "categoryIds"
+              ]
+            }
           }
         ],
         "responses": {
@@ -321,7 +354,7 @@
             "description": "Created"
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Some required fields are missing  <hr>One or more \"categoryIds\" not found"
           },
           "401": {
             "description": "Unauthorized"
@@ -349,6 +382,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Ok"
+          },
           "401": {
             "description": "Unauthorized"
           }
@@ -370,9 +406,37 @@
             "name": "authorization",
             "in": "header",
             "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "You need to enter a valid post",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Latest updates, August 1st"
+                },
+                "content": {
+                  "type": "string",
+                  "example": "The whole text for the blog post goes here in this key"
+                }
+              },
+              "required": [
+                "title",
+                "content"
+              ]
+            }
           }
         ],
         "responses": {
+          "200": {
+            "description": "Updated"
+          },
+          "400": {
+            "description": "Some required fields are missing"
+          },
           "401": {
             "description": "Unauthorized"
           }
@@ -397,6 +461,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Deleted - without response body"
+          },
           "204": {
             "description": "No Content"
           },
