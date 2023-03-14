@@ -62,4 +62,4 @@ const removePost = async (id) => {
 
 module.exports = { createPost, getAllPosts, getPostById, updatePost, removePost };
 
-// Requirements 12, 13, 14, 15
+// Requirements 12, 13, 14, 15, 16.
