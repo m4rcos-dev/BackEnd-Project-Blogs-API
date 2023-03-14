@@ -17,11 +17,11 @@ const createCategory = async (req, res) => {
 } */
 
   /* #swagger.responses[201] = {
-              description: 'Obj category registred',
+              description: 'Obj category registred.',
       } */
 
   /* #swagger.responses[400] = {
-        description: '"name" is required',
+        description: 'The "name" is required.',
 } */
   const category = req.body;
   const { status, message, categoryCreated } = await categoryService.createCategory(category);

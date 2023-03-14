@@ -10,7 +10,7 @@ const getById = async (req, res) => {
   // #swagger.tags = ['User']
 
   /* #swagger.responses[200] = {
-            description: 'Obj user',
+            description: 'OK - User object in the response body.',
     } */
 
   /* #swagger.responses[404] = {
@@ -40,13 +40,13 @@ const createUser = async (req, res) => {
       } */
 
   /* #swagger.responses[400] = {
-        description: `"displayName" length must be at least 8 characters long
-        <hr>"email\" must be a valid email
-        <hr>"password\" length must be at least 6 characters long</br>`,
+        description: `The "displayName" length must be at least 8 characters long.
+        <br>The "email" must be a valid email.
+        <br>The "password" length must be at least 6 characters long.</br>`,
 } */
 
   /* #swagger.responses[409] = {
-              description: 'User already registered',
+              description: 'User already registered.',
       } */
   const user = req.body;
   const { status, message, token } = await userService.createUser(user);
@@ -56,6 +56,9 @@ const createUser = async (req, res) => {
 
 const removeCurrentUser = async (req, res) => {
   // #swagger.tags = ['User']
+  /* #swagger.responses[204] = {
+    description: `Deleted - without response body`,
+} */
   const { id } = req.body.currentUser;
   const removedUser = await userService.removeCurrentUser(id);
   return res.status(204).json(removedUser);

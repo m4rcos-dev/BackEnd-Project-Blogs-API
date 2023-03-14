@@ -19,6 +19,9 @@ const getPostById = async (req, res) => {
 
 const getByTerm = async (req, res) => {
   // #swagger.tags = ['Post']
+  /* #swagger.responses[200] = {
+          description: 'Ok - Post object that based on fetch or empty object in response body ',
+  } */
   const { q } = req.query;
   const likePost = await postService.getByTerm(q);
   return res.status(200).json(likePost);
@@ -37,8 +40,8 @@ const createPost = async (req, res) => {
 } */
 
   /* #swagger.responses[400] = {
-        description: `Some required fields are missing
-        <hr>One or more "categoryIds" not found`,
+        description: `Some required fields are missing.
+        <br>One or more "categoryIds" not found.`,
 } */
   const post = req.body;
   const postCreated = await postService.createPost(post);
@@ -72,8 +75,8 @@ const updatePost = async (req, res) => {
 
 const removePost = async (req, res) => {
   // #swagger.tags = ['Post']
-    /* #swagger.responses[200] = {
-        description: `Deleted - without response body`,
+  /* #swagger.responses[200] = {
+      description: `Deleted - without response body`,
 } */
   const { id } = req.params;
   const removedPost = await postService.removePost(id);

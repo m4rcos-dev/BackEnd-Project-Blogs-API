@@ -16,8 +16,8 @@ const login = async (req, res) => {
       } */
 
   /* #swagger.responses[400] = {
-        description: `Some required fields are missing
-        <hr>Invalid fields`,
+        description: `Some required fields are missing.
+        <br>Invalid fields.`,
 } */
 
   const { email, password } = req.body;
