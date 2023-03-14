@@ -28,28 +28,17 @@ const createUser = async (req, res) => {
 } */
 
   /* #swagger.responses[201] = {
-              description: 'If the user is created successfully the returned result should be as shown below',
-              schema: {
-                  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjo1LCJkaXNwbGF5TmFtZSI6InVzdWFyaW8gZGUgdGVzdGUiLCJlbWFpbCI6InRlc3RlQGVtYWlsLmNvbSIsImltYWdlIjoibnVsbCJ9LCJpYXQiOjE2MjAyNDQxODcsImV4cCI6MTYyMDY3NjE4N30.Roc4byj6mYakYqd9LTCozU1hd9k_Vw5IWKGL4hcCVG8',
-              }
+              description: 'Token',
       } */
 
   /* #swagger.responses[400] = {
-        description: `1- If the request does not have the displayName field properly filled with 8 characters or more, the returned result should be as shown below
-        <hr>2 - If the request does not have the email field properly filled in with the format <prefix@domain>, the returned result should be as shown below
-        <hr>3 - If the request does not have the password field duly filled with 6 characters or more, the returned result should be as shown below`,
-        schema: [{
-            1: {message: '"displayName" length must be at least 8 characters long'},
-            2: {message: '"email" must be a valid email'},
-            3: {message: '"password" length must be at least 6 characters long'},
-        }]
+        description: `"displayName" length must be at least 8 characters long
+        <hr>"email\" must be a valid email
+        <hr>"password\" length must be at least 6 characters long</br>`,
 } */
 
   /* #swagger.responses[409] = {
-              description: 'If the request sends the email field with an email that already exists, the returned result should be as shown below',
-              schema: {
-                  message: 'User already registered',
-              }
+              description: 'User already registered',
       } */
   const user = req.body;
   const { status, message, token } = await userService.createUser(user);
