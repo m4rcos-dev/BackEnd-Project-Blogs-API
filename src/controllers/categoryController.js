@@ -8,6 +8,21 @@ const getAllCategories = async (_req, res) => {
 
 const createCategory = async (req, res) => {
   // #swagger.tags = ['Category']
+  /*  #swagger.parameters['obj'] = {
+      in: 'body',
+      description: 'You need to enter a valid category',
+      schema: {
+          $name: 'Typescript',
+      }
+} */
+
+  /* #swagger.responses[201] = {
+              description: 'Obj category registred',
+      } */
+
+  /* #swagger.responses[400] = {
+        description: '"name" is required',
+} */
   const category = req.body;
   const { status, message, categoryCreated } = await categoryService.createCategory(category);
   if (message) return res.status(status).json({ message });
