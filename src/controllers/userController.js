@@ -8,6 +8,14 @@ const getAllUsers = async (_req, res) => {
 
 const getById = async (req, res) => {
   // #swagger.tags = ['User']
+
+  /* #swagger.responses[200] = {
+            description: 'Obj user',
+    } */
+
+  /* #swagger.responses[404] = {
+      description: 'User does not exist',
+} */
   const { id } = req.params;
   const { status, message, user } = await userService.getById(id);
   if (message) return res.status(status).json({ message });

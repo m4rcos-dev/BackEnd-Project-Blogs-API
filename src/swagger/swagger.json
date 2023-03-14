@@ -155,8 +155,14 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Obj user"
+          },
           "401": {
             "description": "Unauthorized"
+          },
+          "404": {
+            "description": "User does not exist"
           }
         }
       }
