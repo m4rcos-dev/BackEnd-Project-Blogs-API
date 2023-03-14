@@ -1,4 +1,4 @@
-const { BlogPost, PostCategory, User, Category, sequelize } = require('../models');
+const { BlogPost, PostCategory, User, Category, sequelize, Sequelize } = require('../models');
 
 const createPost = async (post) => {
   const { title, content, categoryIds } = post;
@@ -60,6 +60,18 @@ const removePost = async (id) => {
   return null;
 };
 
-module.exports = { createPost, getAllPosts, getPostById, updatePost, removePost };
+const getByTerm = async (term) => {
+  const likePost = await BlogPost.findAll({
+    where: {
+      [Sequelize.Op.or]: [
+        { title: { [Sequelize.Op.like]: term } },
+        { content: { [Sequelize.Op.like]: term } },
+      ],
+    },
+  });
+  return likePost;
+};
+
+module.exports = { createPost, getAllPosts, getPostById, updatePost, removePost, getByTerm };
 
 // Requirements 12, 13, 14, 15, 16.
