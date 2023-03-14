@@ -41,6 +41,10 @@ const getPostById = async (id) => {
 };
 
 const updatePost = async (id, { title, content }) => {
+  if (!title || !content) {
+    return { status: 400, message: 'Some required fields are missing' };
+  }
+
   const updatingPost = await BlogPost.update({ title, content }, { where: { id } });
   if (!updatingPost[0]) {
     return { status: 400, message: 'Internal error when trying to update post' };

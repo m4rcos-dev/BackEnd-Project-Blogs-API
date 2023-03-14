@@ -1,14 +1,8 @@
 const { getPostById } = require('../services/postService');
 
-const validadeUpdatePost = async (req, res, next) => {
-  const { title, content } = req.body;
+const validadeCurrentUserPost = async (req, res, next) => {
   const { id } = req.params;
   const idCurrentUser = req.body.currentUser.id;
-
-  if (!title || !content) {
-    return res.status(400)
-      .json({ message: 'Some required fields are missing' });
-  }
 
   const { status, message, currentPost } = await getPostById(id);
   if (message) return res.status(status).json({ message });
@@ -19,4 +13,4 @@ const validadeUpdatePost = async (req, res, next) => {
   next();
 };
 
-module.exports = validadeUpdatePost;
+module.exports = validadeCurrentUserPost;
