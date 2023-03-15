@@ -3,13 +3,14 @@ const options = {
 };
 
 const swaggerAutogen = require('swagger-autogen')(options);
+require('dotenv').config();
 
 const doc = {
   info: {
     title: 'Blogs API',
     description: 'Documentation - Blogs API',
   },
-  host: process.env.SWAGGERHOST || 'localhost:3000',
+  host: process.env.SWAGGERHOST,
   schemes: ['http', 'https'],
 };
 
