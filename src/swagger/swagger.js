@@ -9,8 +9,8 @@ const doc = {
     title: 'Blogs API',
     description: 'Documentation - Blogs API',
   },
-  host: 'localhost:3000',
-  schemes: ['http'],
+  host: process.env.SWAGGERHOST || 'localhost:3000',
+  schemes: ['http', 'https'],
 };
 
 const outputFile = './swagger.json';
