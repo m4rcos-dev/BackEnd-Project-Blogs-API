@@ -4,7 +4,7 @@
 
 ![flag tools](https://img.shields.io/badge/Tools-%20Docker%20|%20Node.js-9cf) ![flag tools](https://img.shields.io/badge/Languages-JavaScript-yellow) ![flag tools](https://img.shields.io/badge/Frameworks-Express%20|%20JWT%20|%20Swagger-yelow) ![flag database](https://img.shields.io/badge/Database-MySql-green) ![flag orm](https://img.shields.io/badge/ORM-Sequelize-blue)
 
-### [DEPLOY](https://LINK)
+### [DEPLOY](https://blogsapi.up.railway.app/swagger)
 
 <p>Projeto desenvolvido durante o módulo de back-end do curso de desenvolvimento web full-stack Trybe.</p>
 <p>Neste projeto foi desenvolvido uma API e um banco de dados para a produção de conteúdo para um blog.</p>
