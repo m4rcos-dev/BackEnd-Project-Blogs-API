@@ -1,4 +1,4 @@
-#### EN - English [(Versão em Português Brasil aqui)](https://github.com/m4rcos-dev/BackEnd-project-trybesmith/blob/main/README_pt-br.md)
+#### EN - English [(Versão em Português Brasil aqui)](https://github.com/m4rcos-dev/BackEnd-Project-Blogs-API/blob/main/README_pt-br.md)
 
 <h1 align="center">🎉 Welcome to my blogs API project repository </h1>
 
