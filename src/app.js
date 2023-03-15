@@ -20,7 +20,7 @@ app.use('/login', loginRoute);
 app.use('/user', userRoute);
 app.use('/categories', categoryRoute);
 app.use('/post', postRoute);
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
